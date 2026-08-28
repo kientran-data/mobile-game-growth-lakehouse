@@ -3,43 +3,58 @@
 ## Logical Architecture (Phase 1)
 
 ```text
-                         MOBILE GAME SOURCES
+                         SOURCE SYSTEMS
 
-     Gameplay     Attribution     UA Spend
-        │              │             │
-        │              │             │
-     Ad Revenue       IAP        Metadata
-        │              │             │
-        └──────────────┼─────────────┘
-                       ▼
-                  Landing Zone
-                       │
-                       ▼
-                    Auto Loader
-                       │
-                       ▼
-                    BRONZE
-                       │
-                       ▼
-               Lakeflow Pipelines
-                       │
-                       ▼
-                    SILVER
-                       │
-           ┌───────────┼───────────┐
-           │           │           │
-      Acquisition   Player     Monetization
-           │           │           │
-           └───────────┼───────────┘
-                       ▼
-                     GOLD
-                       │
-        ┌──────────────┼──────────────┐
-        ▼              ▼              ▼
-    Retention         LTV            ROAS
-      Funnel        ARPDAU       UA Performance
-        │              │              │
-        └──────────────┼──────────────┘
-                       ▼
-                 Databricks SQL
+                ┌───────────────────────────┐
+                │                           │
+                │      Oracle OLTP          │
+                │                           │
+                │  GAME_MASTER              │
+                │  APP_VERSION              │
+                │  IAP_TRANSACTION          │
+                │                           │
+                └─────────────┬─────────────┘
+                              │
+                              │ JDBC
+                              │ incremental
+                              ▼
+
+Game SDK ───────── JSON ─────────────┐
+Attribution ────── JSON ─────────────┤
+UA Platforms ───── CSV ──────────────┤
+Ad Monetization ── JSON ─────────────┤
+Campaign Export ── JSON/CSV ─────────┤
+                                     │
+                                     ▼
+                               DATABRICKS
+                                     │
+                      ┌──────────────┴─────────────┐
+                      │                            │
+                Auto Loader                  JDBC Ingestion
+                      │                            │
+                      └──────────────┬─────────────┘
+                                     ▼
+                               BRONZE DELTA
+                                     │
+                                     ▼
+                             LAKEFLOW PIPELINES
+                                     │
+                                     ▼
+                                  SILVER
+                                     │
+                  ┌──────────────────┼───────────────────┐
+                  │                  │                   │
+             Engagement        Acquisition        Monetization
+                  │                  │                   │
+                  └──────────────────┼───────────────────┘
+                                     ▼
+                                   GOLD
+                                     │
+                  ┌──────────────────┼──────────────────┐
+                  ▼                  ▼                  ▼
+              Retention             LTV               ROAS
+              ARPDAU              Funnel         Version Analysis
+                                     │
+                                     ▼
+                              Databricks SQL
 ```

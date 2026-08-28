@@ -4,7 +4,7 @@
 Metadata for app version releases.
 
 ## Source System
-Release Management
+Oracle Operational DB (APP_VERSION)
 
 ## Business Purpose
 Correlate app updates with engagement/monetization changes.
@@ -16,7 +16,7 @@ One row per `game + platform + app version`.
 - Business Key: `game_id` + `platform` + `version`
 
 ## Delivery Pattern
-Incremental CSV/JSON.
+JDBC incremental.
 
 ## Mutability
 Mutable (Status can change).

@@ -4,7 +4,7 @@
 Internal reference data for the game portfolio.
 
 ## Source System
-Internal Game Management
+Oracle Operational DB (GAME_MASTER)
 
 ## Business Purpose
 Provide metadata for games.
@@ -16,7 +16,7 @@ One row per game.
 - Primary Key: `game_id`
 
 ## Delivery Pattern
-Daily/full snapshot (CSV).
+JDBC snapshot/incremental.
 
 ## Mutability
 Mutable (low frequency, e.g. status changes).

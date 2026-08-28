@@ -10,9 +10,9 @@ There are 7 source groups but practically 8 datasets:
 | Attribution | `installs` | AppsFlyer-like | Hourly |
 | User Acquisition | `ua_spend` | Meta/Google/TikTok-like | Daily |
 | Ad Monetization | `ad_impressions` | Mediation SDK | Near-real-time |
-| IAP | `iap_purchases` | App Store / Play Store-like | Incremental |
-| Reference | `games` | Internal Game Management | Snapshot |
-| Reference | `app_versions` | Release Management | Incremental |
+| IAP | `iap_purchases` | Oracle operational DB | JDBC incremental |
+| Reference | `games` | Oracle operational DB | JDBC snapshot/incremental |
+| Reference | `app_versions` | Oracle operational DB | JDBC incremental |
 | Marketing Metadata | `campaigns` | Marketing Platform | Mutable |
 
 ## Dataset Inventory
@@ -57,9 +57,9 @@ There are 7 source groups but practically 8 datasets:
 | installs       | JSON     | Hourly          | Incremental/Corrections |
 | ua_spend       | CSV      | Daily           | Daily report            |
 | ad_impressions | JSON     | 5-15 min        | Incremental             |
-| iap_purchases  | JSON     | Hourly          | Incremental/updates     |
-| games          | CSV      | Daily/On change | Snapshot                |
-| app_versions   | CSV/JSON | On release      | Incremental             |
+| iap_purchases  | Database | Hourly          | JDBC Incremental/updates |
+| games          | Database | Daily/On change | JDBC Snapshot/incremental |
+| app_versions   | Database | On release      | JDBC Incremental        |
 | campaigns      | JSON/CSV | Hourly/Daily    | Mutable snapshot/change |
 
 ## Mutability Matrix

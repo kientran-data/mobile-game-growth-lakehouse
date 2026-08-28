@@ -4,7 +4,7 @@
 In-App Purchase transactions.
 
 ## Source System
-App Store / Google Play transaction feed
+Oracle Operational DB (IAP_TRANSACTION)
 
 ## Business Purpose
 Track IAP revenue and payer conversion.
@@ -16,7 +16,7 @@ One row per purchase transaction.
 - Primary Key: `transaction_id`
 
 ## Delivery Pattern
-Hourly incremental JSON files.
+JDBC incremental extraction.
 
 ## Mutability
 Mutable (Transactions can transition from `completed` to `refunded`/`cancelled`).
