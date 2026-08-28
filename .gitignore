@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+.env.*
+
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Local datasets
+data/landing/*
+data/generated/*
+
+# Keep folder structure
+!data/landing/.gitkeep
+!data/generated/.gitkeep
+
+# Databricks local metadata
+.databricks/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
