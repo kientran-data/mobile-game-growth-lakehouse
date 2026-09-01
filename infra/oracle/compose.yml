@@ -1,0 +1,24 @@
+services:
+
+  oracle:
+    image: container-registry.oracle.com/database/free:latest
+    container_name: novaplay-oracle
+
+    ports:
+      - "1521:1521"
+
+    environment:
+      ORACLE_PWD: ${ORACLE_SYSTEM_PASSWORD}
+      ORACLE_CHARACTERSET: AL32UTF8
+
+      NOVAPLAY_OWNER_PASSWORD: ${NOVAPLAY_OWNER_PASSWORD}
+      DATABRICKS_READER_PASSWORD: ${DATABRICKS_READER_PASSWORD}
+
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+      - ./setup:/opt/oracle/scripts/setup
+
+    restart: unless-stopped
+
+volumes:
+  oracle_data:
