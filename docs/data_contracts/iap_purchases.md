@@ -4,7 +4,7 @@
 In-App Purchase transactions.
 
 ## Source System
-Oracle Operational DB (IAP_TRANSACTION)
+Game SDK / Backend Service
 
 ## Business Purpose
 Track IAP revenue and payer conversion.
@@ -16,7 +16,7 @@ One row per purchase transaction.
 - Primary Key: `transaction_id`
 
 ## Delivery Pattern
-JDBC incremental extraction.
+Near-real-time JSON files.
 
 ## Mutability
 Mutable (Transactions can transition from `completed` to `refunded`/`cancelled`).

@@ -1,0 +1,42 @@
+{
+  "generation_id": "run_seed_42_small",
+  "timestamp": "2026-09-02T08:11:55.287521Z",
+  "seed": 42,
+  "scale": "small",
+  "date_range": {
+    "start": "2026-01-01",
+    "end": "2026-06-30"
+  },
+  "datasets": {
+    "games": {
+      "rows": 3
+    },
+    "app_versions": {
+      "rows": 54
+    },
+    "campaigns": {
+      "rows": 672
+    },
+    "installs": {
+      "rows": 1000
+    },
+    "game_events": {
+      "rows": 58717
+    },
+    "iap_purchases": {
+      "rows": 97
+    },
+    "ad_impressions": {
+      "rows": 14212
+    },
+    "ua_spend": {
+      "rows": 16820
+    }
+  },
+  "dq_injections": {
+    "duplicate_events": 132,
+    "late_events": 595,
+    "invalid_country": 67,
+    "missing_player_id": 21
+  }
+}

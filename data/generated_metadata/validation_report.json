@@ -1,0 +1,9 @@
+{
+  "status": "PASS_WITH_EXPECTED_DQ_ISSUES",
+  "checks": {
+    "schema": "PASS",
+    "relationships": "PASS",
+    "business_rules": "PASS",
+    "dq_injection_counts": "PASS"
+  }
+}

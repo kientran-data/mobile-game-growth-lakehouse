@@ -6,14 +6,9 @@ LTV and campaign ROAS.
 
 ## Project Goals
 
-The project simulates a mobile game company's data platform integrating:
+Integrated gameplay telemetry, attribution, UA spend, ad monetization, IAP, and master data from multiple file-based and simulated source systems into the Databricks Lakehouse.
 
-- Gameplay telemetry
-- Attribution data
-- User Acquisition spend
-- Ad monetization
-- In-App Purchase revenue
-- Game and campaign metadata
+Implemented incremental ingestion for continuously arriving file-based datasets using Databricks Auto Loader.
 
 The platform will be implemented using:
 
@@ -29,6 +24,8 @@ The platform will be implemented using:
 
 ```text
 Source Data
+    ↓
+CSV / JSON / Parquet
     ↓
 Landing
     ↓

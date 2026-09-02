@@ -4,7 +4,7 @@
 Internal reference data for the game portfolio.
 
 ## Source System
-Oracle Operational DB (GAME_MASTER)
+Synthetic Data / Master System (CSV)
 
 ## Business Purpose
 Provide metadata for games.
@@ -16,7 +16,7 @@ One row per game.
 - Primary Key: `game_id`
 
 ## Delivery Pattern
-JDBC snapshot/incremental.
+Snapshot/incremental CSV files.
 
 ## Mutability
 Mutable (low frequency, e.g. status changes).
